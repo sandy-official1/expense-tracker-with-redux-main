@@ -19,7 +19,7 @@ const Login = () => {
 
     {
       fetch(
-        "https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyD0lprqP2RlA9OT__6wdnD_E2VZb9GlRFo",
+        "https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyCvKkfqP1ZHB1P12SfuFtXfK6gedsmhm5w",
         {
           method: "POST",
           body: JSON.stringify({
@@ -68,7 +68,7 @@ const Login = () => {
     } else {
       {
         fetch(
-          "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyD0lprqP2RlA9OT__6wdnD_E2VZb9GlRFo",
+          "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCvKkfqP1ZHB1P12SfuFtXfK6gedsmhm5w",
           {
             method: "POST",
             body: JSON.stringify({

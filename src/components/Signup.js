@@ -1,8 +1,9 @@
 import React, { useRef } from "react";
 import { Form, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const Signup = () => {
+  const history = useHistory();
   const emailRef = useRef();
   const passwordRef = useRef();
   const confirmPasswordRef = useRef();
@@ -18,7 +19,7 @@ const Signup = () => {
     } else {
       console.log("succes!!");
       fetch(
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyD0lprqP2RlA9OT__6wdnD_E2VZb9GlRFo",
+        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCvKkfqP1ZHB1P12SfuFtXfK6gedsmhm5w",
         {
           method: "POST",
           body: JSON.stringify({
@@ -34,6 +35,7 @@ const Signup = () => {
         if (res.ok) {
           console.log("senAccount created succesfullly");
           alert("Account created succesful");
+          history.push("/login"); // Redirect to login page
         } else {
           return res.json().then((data) => {
             // console.log(data);

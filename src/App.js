@@ -20,8 +20,14 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Route exact path="/">
+        <Signup /> {/* Show signup page initially */}
+      </Route>
 
       <Switch>
+        <Route path="/home">
+          <Home />
+        </Route>
         <Route path="/signup">
           <Signup />
         </Route>
@@ -32,10 +38,6 @@ function App() {
 
         <Route path="/verify-email">
           <Verify />
-        </Route>
-
-        <Route path="/home">
-          <Home />
         </Route>
 
         <Route path="/DailyExpense">

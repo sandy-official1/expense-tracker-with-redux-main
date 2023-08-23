@@ -33,7 +33,7 @@ const DailyExpense = () => {
     };
     axios
       .put(
-        `https://expensetracker-d40e1-default-rtdb.firebaseio.com/${sanitizedEmail}/${key}.json`,
+        `https://expense-tracker-redux-707b7-default-rtdb.firebaseio.com/${sanitizedEmail}/${key}.json`,
         editedExpense
       )
       .then((response) => {
@@ -57,7 +57,7 @@ const DailyExpense = () => {
 
     axios
       .post(
-        `https://expensetracker-d40e1-default-rtdb.firebaseio.com/${sanitizedEmail}.json`,
+        `https://expense-tracker-redux-707b7-default-rtdb.firebaseio.com/${sanitizedEmail}.json`,
         expense
       )
       .then((response) => {
@@ -78,7 +78,7 @@ const DailyExpense = () => {
   const handleDelete = (key) => {
     axios
       .delete(
-        `https://expensetracker-d40e1-default-rtdb.firebaseio.com/${sanitizedEmail}/${key}.json`
+        `https://expense-tracker-redux-707b7-default-rtdb.firebaseio.com/${sanitizedEmail}/${key}.json`
       )
       .then((response) => {
         console.log("Expense successfully deleted");
@@ -97,7 +97,7 @@ const DailyExpense = () => {
     setIsEditing(true);
     axios
       .get(
-        `https://expensetracker-d40e1-default-rtdb.firebaseio.com/${sanitizedEmail}/${key}.json`
+        `https://expense-tracker-redux-707b7-default-rtdb.firebaseio.com/${sanitizedEmail}/${key}.json`
       )
       .then((response) => {
         amountRef.current.value = response.data.amount;
@@ -114,7 +114,7 @@ const DailyExpense = () => {
   React.useEffect(() => {
     axios
       .get(
-        `https://expensetracker-d40e1-default-rtdb.firebaseio.com/${sanitizedEmail}.json`
+        `https://expense-tracker-redux-707b7-default-rtdb.firebaseio.com/${sanitizedEmail}.json`
       )
       .then((response) => {
         if (response.data) {
